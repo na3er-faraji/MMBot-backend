@@ -62,7 +62,9 @@ module.exports = router;
  *                 minLength: 8
  *                 description: At least one number and one letter
  *             example:
- *               name: fake name
+ *               firstname: firstname
+ *               lastname: lastname
+ *               username: username
  *               email: fake@example.com
  *               password: password1
  *
