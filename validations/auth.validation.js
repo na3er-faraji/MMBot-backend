@@ -21,7 +21,6 @@ const registerWallet = {
 
 const login = {
   body: Joi.object().keys({
-    address: Joi.string().required(),
     email: Joi.string().required(),
     password: Joi.string().required()
   })
