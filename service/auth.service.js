@@ -2,6 +2,7 @@ const httpStatus = require('http-status');
 const bcrypt = require('bcrypt');
 const tokenService = require('./token.service');
 const userService = require('./user.service');
+const authMapper = require('../mapper/auth.mapper');
 const db = require("../models");
 const Token = db.token;
 const ApiError = require('../utils/ApiError');
@@ -18,7 +19,8 @@ const loginUserWithEmailAndPassword = async (email, password) => {
     if (!user || !(await bcrypt.compare(password, user.password))) {
         return null;
     }
-    return user;
+
+    return authMapper.mapLoginData(user)
 };
 
 /**
