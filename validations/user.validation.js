@@ -24,7 +24,7 @@ const getUsers = {
 
 const getUser = {
   params: Joi.object().keys({
-    id: Joi.string().custom(objectId),
+    id: Joi.number(),
   }),
 };
 
