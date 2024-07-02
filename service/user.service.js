@@ -7,7 +7,7 @@ const Transaction = db.transaction;
 const ApiError = require('../utils/ApiError');
 const httpStatus = require('http-status');
 const createUser = async (params) => {
-    const { firstname, lastname, address, username, email, password, role } = params;
+    const { firstname, lastname, address, username, email, password } = params;
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(password, salt);
     const user = {
@@ -15,8 +15,9 @@ const createUser = async (params) => {
         lastname,
         username,
         email,
+        address,
         password: hash,
-        role,
+        role: 'user',
         active: 0,
         deleted: 0,
         balance: 0,
