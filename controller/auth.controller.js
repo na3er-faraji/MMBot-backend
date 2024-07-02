@@ -33,7 +33,7 @@ const loginWallet = catchAsync(async (req, res) => {
 });
 
 const register = catchAsync(async (req, res) => {
-    const user = await userServices.createUser(req.body);
+    const user = await userServices.createUser({...req.body, role: 'user'});
     if (user) {
         const tokens = await tokenService.generateAuthTokens(user);
         res.send({user, tokens});
