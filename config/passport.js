@@ -4,7 +4,7 @@ const db = require("../models");
 const User = db.user;
 
 const jwtOptions = {
-    secretOrKey: 'security' || process.env.JWT_SECRET,
+    secretOrKey: process.env.JWT_SECRET,
     jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
 };
 
