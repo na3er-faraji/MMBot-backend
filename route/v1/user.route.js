@@ -68,7 +68,8 @@ module.exports = router;
  *                  type: string
  *                  enum: [user, admin]
  *             example:
- *               name: fake name
+ *               firstname: firstname
+ *               lastname: lastname
  *               email: fake@example.com
  *               password: password1
  *               role: user
